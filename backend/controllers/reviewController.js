@@ -80,7 +80,7 @@ const updateReview = async (req, res) => {
   }
 
   const review = await Review.findByIdAndUpdate(id, reviewInput, {
-    new: true,
+    returnDocument: 'after',
     runValidators: true,
   });
 

@@ -25,9 +25,9 @@
 - [x] Avoid CSS frameworks and inline styles.
 
 ## Phase 5 — UI & Functionality Testing
-- [ ] Verify navigation between pages.
-- [ ] Test form inputs, reset, and cancel functionality.
-- [ ] Verify UI behavior and fix issues.
+- [x] Verify navigation between pages.
+- [x] Test form inputs, reset, and cancel functionality.
+- [x] Verify UI behavior and fix issues.
 
 ## Phase 6 — Socket.IO Integration
 - [x] Integrate Socket.IO with the backend.
@@ -36,7 +36,7 @@
 - [x] Update the reviews list in real time without refreshing.
 
 ## Phase 7 — Finalization
-- [ ] Test complete application.
-- [ ] Fix bugs and verify all required functionality.
-- [ ] Complete README.md.
+- [x] Test complete application.
+- [x] Fix bugs and verify all required functionality.
+- [x] Complete README.md.
 - [ ] Push the project to a public GitHub repository.

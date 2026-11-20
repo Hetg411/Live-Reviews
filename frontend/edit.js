@@ -80,12 +80,13 @@ deleteButton.addEventListener('click', async () => {
 });
 
 saveButton.disabled = true;
+deleteButton.disabled = true;
 loadReview()
+  .then(() => {
+    saveButton.disabled = false;
+    deleteButton.disabled = false;
+  })
   .catch((error) => {
     statusMessage.textContent = error.message;
     statusMessage.hidden = false;
-    deleteButton.disabled = true;
-  })
-  .finally(() => {
-    saveButton.disabled = false;
   });
