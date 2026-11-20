@@ -9,19 +9,56 @@
     >
     <title>Live Reviews</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="./app.js" defer></script>
+    <script src="./list.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/" data-route aria-label="Live Reviews home">
+      <a class="brand" href="./index.html" aria-label="Live Reviews home">
         <span class="brand-mark" aria-hidden="true">LR</span>
         <span>Live Reviews</span>
       </a>
       <span class="header-note">A little space for thoughtful feedback</span>
     </header>
 
-    <main class="page-shell" id="app">
-      <p class="loading-message">Loading reviews...</p>
+    <main class="page-shell">
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">Your workspace</p>
+          <h1>Reviews, at a glance.</h1>
+          <p class="page-description">
+            Keep useful feedback, recommendations, and little discoveries all in one place.
+          </p>
+        </div>
+        <a class="button button-primary" href="./new.html">
+          <span class="button-icon" aria-hidden="true">+</span>
+          Create review
+        </a>
+      </section>
+
+      <section class="table-card">
+        <div class="card-heading">
+          <h2>Recent reviews</h2>
+          <span class="demo-label">Live reviews</span>
+        </div>
+        <p class="loading-message" id="status-message" role="status" aria-live="polite">
+          Loading reviews...
+        </p>
+        <div class="table-scroll">
+          <table class="review-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Date-time</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="review-list"></tbody>
+          </table>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
