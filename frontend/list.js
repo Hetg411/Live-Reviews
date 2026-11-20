@@ -1,6 +1,7 @@
 const API_URL = 'http://localhost:3000/api/reviews';
 const reviewList = document.querySelector('#review-list');
 const statusMessage = document.querySelector('#status-message');
+const realtimeStatus = document.querySelector('#realtime-status');
 
 const formatDate = (dateValue) =>
   new Intl.DateTimeFormat(undefined, {
@@ -108,5 +109,29 @@ reviewList.addEventListener('click', async (event) => {
     deleteButton.disabled = false;
   }
 });
+
+if (typeof io === 'function') {
+  const socket = io('http://localhost:3000');
+
+  socket.on('connect', () => {
+    realtimeStatus.hidden = true;
+    realtimeStatus.textContent = '';
+  });
+
+  socket.on('connect_error', (error) => {
+    realtimeStatus.className = 'form-error';
+    realtimeStatus.textContent = 'Live updates are unavailable. Refresh to see the latest reviews.';
+    realtimeStatus.hidden = false;
+    console.error('Socket.IO connection error:', error.message);
+  });
+
+  socket.on('review:created', loadReviews);
+  socket.on('review:updated', loadReviews);
+  socket.on('review:deleted', loadReviews);
+} else {
+  realtimeStatus.className = 'form-error';
+  realtimeStatus.textContent = 'Live updates are unavailable. Refresh to see the latest reviews.';
+  realtimeStatus.hidden = false;
+}
 
 loadReviews();

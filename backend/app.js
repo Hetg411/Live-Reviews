@@ -1,7 +1,5 @@
 const express = require('express');
-const path = require('node:path');
 const reviewRoutes = require('./routes/reviewRoutes');
-const connectDatabase = require('./database/connection');
 
 const app = express();
 
@@ -40,21 +38,11 @@ app.use((error, req, res, next) => {
   return res.status(500).json({ message: 'Internal server error.' });
 });
 
-const startServer = async () => {
-  process.loadEnvFile(path.join(__dirname, '.env'));
-  await connectDatabase();
-
-  const port = process.env.PORT || 3000;
-  app.listen(port, () => {
-    console.log(`Server listening on port ${port}.`);
-  });
-};
+module.exports = app;
 
 if (require.main === module) {
-  startServer().catch((error) => {
+  require('./server').startServer().catch((error) => {
     console.error('Failed to start server:', error.message);
     process.exitCode = 1;
   });
 }
-
-module.exports = app;

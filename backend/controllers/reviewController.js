@@ -56,6 +56,11 @@ const createReview = async (req, res) => {
   }
 
   const review = await Review.create(reviewInput);
+  const io = req.app.get('io');
+  if (io) {
+    io.emit('review:created', review);
+  }
+
   return res.status(201).json({ review });
 };
 
@@ -83,6 +88,11 @@ const updateReview = async (req, res) => {
     return res.status(404).json({ message: 'Review not found.' });
   }
 
+  const io = req.app.get('io');
+  if (io) {
+    io.emit('review:updated', review);
+  }
+
   return res.status(200).json({ review });
 };
 
@@ -97,6 +107,11 @@ const deleteReview = async (req, res) => {
 
   if (!review) {
     return res.status(404).json({ message: 'Review not found.' });
+  }
+
+  const io = req.app.get('io');
+  if (io) {
+    io.emit('review:deleted', { reviewId: review._id });
   }
 
   return res.status(200).json({ message: 'Review deleted successfully.' });

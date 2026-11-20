@@ -30,10 +30,10 @@
 - [ ] Verify UI behavior and fix issues.
 
 ## Phase 6 — Socket.IO Integration
-- [ ] Integrate Socket.IO with the backend.
-- [ ] Broadcast events on review creation, update, and deletion.
-- [ ] Listen to events on the frontend.
-- [ ] Update the reviews list in real time without refreshing.
+- [x] Integrate Socket.IO with the backend.
+- [x] Broadcast events on review creation, update, and deletion.
+- [x] Listen to events on the frontend.
+- [x] Update the reviews list in real time without refreshing.
 
 ## Phase 7 — Finalization
 - [ ] Test complete application.
