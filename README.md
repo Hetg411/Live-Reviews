@@ -12,22 +12,31 @@ A simple reviews application built with Node.js, Express, MongoDB, Mongoose, Soc
 
 ### Install and configure
 
-From the project root, run these commands in PowerShell:
+From the project root, open PowerShell and navigate to the backend directory:
 
 ```powershell
-Set-Location backend
+cd backend
 npm install
-if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 ```
 
-Edit `backend/.env` and set the MongoDB connection string and backend port:
+Create your `.env` file from the example file:
+
+```powershell
+if (-not (Test-Path .env)) {
+    Copy-Item .env.example .env
+}
+```
+
+Edit `backend/.env` and configure the following environment variables:
 
 ```env
 PORT=3000
-MONGODB_URI=mongodb://127.0.0.1:27017/live-reviews
+MONGODB_URI=mongodb://127.0.0.1:27017/live_reviews
 ```
 
-Keep MongoDB running before starting the application. The local frontend connects to the backend at `http://localhost:3000`, so keep `PORT=3000` unless you also update the frontend API and Socket.IO URLs.
+Make sure MongoDB is running before starting the application.
+
+The frontend connects to the backend at `http://localhost:3000`. Keep `PORT=3000` unless you also update the frontend API and Socket.IO URLs.
 
 ### Start the backend
 
