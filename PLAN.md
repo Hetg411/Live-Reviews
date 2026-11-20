@@ -7,15 +7,15 @@
 - [x] Configure environment variables.
 
 ## Phase 2 — Database
-- [ ] Connect MongoDB.
-- [ ] Create Review schema/model.
-- [ ] Verify database connection and model.
-- [ ] Export the model for backend use.
+- [x] Connect MongoDB.
+- [x] Create Review schema/model.
+- [x] Verify database connection and model.
+- [x] Export the model for backend use.
 
 ## Phase 3 — Backend CRUD APIs
-- [ ] Create API routes for adding, updating, and deleting reviews.
-- [ ] Implement CRUD functionality without WebSocket integration.
-- [ ] Test APIs independently.
+- [x] Create API routes for adding, updating, and deleting reviews.
+- [x] Implement CRUD functionality without WebSocket integration.
+- [x] Test APIs independently.
 
 ## Phase 4 — Frontend UI
 - [ ] Build basic UI using HTML and CSS only.
