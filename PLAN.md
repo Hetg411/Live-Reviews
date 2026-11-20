@@ -18,11 +18,11 @@
 - [x] Test APIs independently.
 
 ## Phase 4 — Frontend UI
-- [ ] Build basic UI using HTML and CSS only.
-- [ ] Create reviews list page.
-- [ ] Create add review page.
-- [ ] Create edit review page.
-- [ ] Avoid CSS frameworks and inline styles.
+- [x] Build basic UI using HTML, CSS, and modern JavaScript.
+- [x] Create reviews list page.
+- [x] Create add review page.
+- [x] Create edit review page.
+- [x] Avoid CSS frameworks and inline styles.
 
 ## Phase 5 — UI & Functionality Testing
 - [ ] Verify navigation between pages.
